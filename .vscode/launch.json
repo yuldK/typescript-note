@@ -5,17 +5,19 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch ts-note",
+            "name": "deno: run",
             "type": "node",
             "request": "launch",
-            "skipFiles": [
-                "<node_internals>/**"
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "deno",
+            "runtimeArgs": [
+              "run",
+              "--inspect-brk",
+              "--allow-read",
+              "--allow-write",
+              "src/main.ts"
             ],
-            "program": "${workspaceFolder}/src/mian.ts",
-            "preLaunchTask": "빌드",
-            "outFiles": [
-                "${workspaceFolder}/out/**/*.js"
-            ]
+            "attachSimplePort": 1174
         }
     ]
 }

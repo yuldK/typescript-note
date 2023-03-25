@@ -2,13 +2,22 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "typescript",
-            "tsconfig": "tsconfig.json",
-            "problemMatcher": [
-                "$tsc"
+            "type": "shell",
+            "command": "deno",
+            "args": [
+                "compile",
+                "--allow-read",
+                "--allow-write",
+                "--output",
+                "bin/note",
+                "src/main.ts"
             ],
-            "group": "build",
-            "label": "빌드"
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "label": "deno: 빌드"
         }
     ]
 }
